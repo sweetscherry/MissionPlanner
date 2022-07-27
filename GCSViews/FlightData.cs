@@ -1675,7 +1675,7 @@ namespace MissionPlanner.GCSViews
                     {
                         cmd = (MAVLink.MAV_CMD) Enum.Parse(typeof(MAVLink.MAV_CMD), CMB_action.Text.ToUpper());
                     }
-                    catch (ArgumentException ex)
+                    catch (ArgumentException)
                     {
                         cmd = (MAVLink.MAV_CMD) Enum.Parse(typeof(MAVLink.MAV_CMD),
                             "DO_START_" + CMB_action.Text.ToUpper());
@@ -5690,7 +5690,7 @@ namespace MissionPlanner.GCSViews
                 else CustomMessageBox.Show("Timeout.");
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show("Timeout.");
             }
@@ -5786,6 +5786,11 @@ namespace MissionPlanner.GCSViews
         {
             tabControlactions.Multiline = !tabControlactions.Multiline;
             Settings.Instance["tabControlactions_Multiline"] = tabControlactions.Multiline.ToString();
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

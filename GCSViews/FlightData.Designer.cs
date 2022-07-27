@@ -308,7 +308,9 @@ namespace MissionPlanner.GCSViews
             this.hud1.BackColor = System.Drawing.Color.Black;
             this.hud1.batterycellcount = 4;
             this.hud1.batterylevel = 0F;
+            this.hud1.batterylevel2 = 0F;
             this.hud1.batteryremaining = 0F;
+            this.hud1.batteryremaining2 = 0F;
             this.hud1.bgimage = null;
             this.hud1.connected = false;
             this.hud1.ContextMenuStrip = this.contextMenuStripHud;
@@ -316,6 +318,7 @@ namespace MissionPlanner.GCSViews
             this.hud1.criticalvoltagealert = false;
             this.hud1.critSSA = 30F;
             this.hud1.current = 0F;
+            this.hud1.current2 = 0F;
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("airspeed", this.bindingSourceHud, "airspeed", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("alt", this.bindingSourceHud, "alt", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("batterylevel", this.bindingSourceHud, "battery_voltage", true));
@@ -2446,7 +2449,7 @@ namespace MissionPlanner.GCSViews
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 360D;
+            this.windDir1.Direction = 180D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;
@@ -2526,6 +2529,7 @@ namespace MissionPlanner.GCSViews
             this.gMapControl1.ShowTileGridLines = false;
             this.gMapControl1.Zoom = 3D;
             this.gMapControl1.OnPositionChanged += new GMap.NET.PositionChanged(this.gMapControl1_OnPositionChanged);
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             this.gMapControl1.Click += new System.EventHandler(this.gMapControl1_Click);
             this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
             this.gMapControl1.MouseLeave += new System.EventHandler(this.gMapControl1_MouseLeave);

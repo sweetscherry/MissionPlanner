@@ -1616,7 +1616,7 @@ namespace MissionPlanner.GCSViews
         {
             try
             {
-                var existing = overlay.Markers.Where(a => a.Tag == tag);
+                var existing = overlay.Markers.Where(a => (string) a.Tag == tag);
                 if (existing.Count() > 0)
                 {
                     var item = existing.First();
@@ -7866,6 +7866,67 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             MainMap.Position = MainV2.comPort.MAV.cs.HomeLocation;
             if (MainMap.Zoom < 17)
                 MainMap.Zoom = 17;
+        }
+
+   
+
+        private void MainMap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelWaypoints_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            var FLIGHT = new FlightPlanner();
+            FLIGHT
+                .panelMap.Size.Width.Equals(400);
+            FLIGHT.panelMap.Size.Height.Equals(500);
+
+        }
+
+        private void lbl_distance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_homedist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Commands_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void panelMap_Paint(object sender, PaintEventArgs e)
+        {
+
+
+        }
+
+        private void panelBASE_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

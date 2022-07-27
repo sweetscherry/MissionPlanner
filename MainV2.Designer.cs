@@ -208,6 +208,7 @@ namespace MissionPlanner
             resources.ApplyResources(this.menu, "menu");
             this.menu.Name = "menu";
             this.menu.UseVisualStyleBackColor = true;
+            this.menu.Click += new System.EventHandler(this.menu_Click);
             this.menu.MouseEnter += new System.EventHandler(this.menu_MouseEnter);
             // 
             // panel1
